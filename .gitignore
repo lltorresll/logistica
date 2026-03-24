@@ -1,0 +1,26 @@
+.env
+
+# Base de datos PostgreSQL
+postgres_data/
+
+# Python / Django
+__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite3
+venv/
+env/
+
+# Node / Next.js / Frontend
+node_modules/
+.next/
+out/
+build/
+.npm
+npm-debug.log*
+yarn-error.log*
+frontend/.env*.local
+
+# OS
+.DS_Store
+Thumbs.db
