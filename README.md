@@ -53,3 +53,19 @@ docker exec -it appointment-management-system-frontend-1 npm test
 URL de Acceso	http://localhost:3000
 Usuario	admin
 Contraseña	admin123
+
+
+# --- CONFIGURACIÓN DEL BACKEND (Django) ---
+DEBUG=True
+SECRET_KEY=django-insecure-tu-clave-secreta-aqui
+ALLOWED_HOSTS=localhost,127.0.0.1
+
+# Datos de la Base de Datos (Postgres)
+DB_NAME=appointments_db
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_HOST=db
+DB_PORT=5432
+
+# --- CONFIGURACIÓN DEL FRONTEND (Next.js) ---
+NEXT_PUBLIC_API_URL=http://localhost:8000/api
