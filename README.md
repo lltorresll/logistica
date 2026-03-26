@@ -44,8 +44,15 @@ Ejecutá estos comandos en tu terminal (PowerShell o Bash) desde la raíz del pr
 
 ### 1. Levantar el ecosistema (Docker)
 Este comando construye las imágenes y levanta los contenedores de PostgreSQL, el Backend (Django) y el Frontend (Next.js).
+
 ```bash
 docker-compose up --build
+
+# 1. Crear los archivos de migración (opcional si ya están en el repo)
+docker exec -it appointment-management-system-backend-1 python manage.py makemigrations
+
+# 2. Aplicar las migraciones a la base de datos
+docker exec -it appointment-management-system-backend-1 python manage.py migrate
 docker exec -it appointment-management-system-backend-1 python manage.py seed_data
 docker exec -it appointment-management-system-backend-1 python manage.py test appointments
 docker exec -it appointment-management-system-frontend-1 npm test
@@ -66,6 +73,9 @@ DB_USER=postgres
 DB_PASSWORD=postgres
 DB_HOST=db
 DB_PORT=5432
+
+
+
 
 # --- CONFIGURACIÓN DEL FRONTEND (Next.js) ---
 NEXT_PUBLIC_API_URL=http://localhost:8000/api
