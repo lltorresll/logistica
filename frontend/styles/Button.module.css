@@ -1,0 +1,29 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .button {
+    width: auto;
+  }
+}
+
+.primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
